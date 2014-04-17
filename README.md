@@ -1,6 +1,6 @@
 
-CARNOT REFRIGERATOR v01.05 README
-=================================
+CONDUCTORS IN SERIES v01.08 README
+==================================
 
 Language
 --------
@@ -11,9 +11,7 @@ Language
 Description
 -----------
 
-  This program simulates a Carnot engine that utilizes a thermal difference to 
-  perform work. It has the theoretical maximum possible efficiency for a heat 
-  engine. In this simulation, the thermal difference is of a fixed magnitude.
+  This program simulates heat energy flow through conductors in series.
 
 
 Requirements
@@ -37,14 +35,14 @@ Running the Program
 
   Then enter:
 
-    ruby carnot_engine_v01-02.rb
+    ruby conductors_in_series_v01.08.rb
   
   
 Adjusting Parameters
 --------------------
 
-  You can adjust the temperatures of the thermal reservoirs as well as the
-  heat energy flow rate from the cooler reservoir. To do so, change the
+  You can choose the material of each thermal conductors,as well as the
+  the length and width of the conductors.  To do so, change the
   parameters in the "# Initialize simulation parameters" section of the 
   source code. You will need a text editor for this.
 
@@ -66,7 +64,7 @@ Troubleshooting
 Copyright and Use Notice
 ------------------------
   
-  Copyright 2011-13 by Mark Ciotola.
+  Copyright 2011-14 by Mark Ciotola.
   
   Available for use under GNU license.
   
