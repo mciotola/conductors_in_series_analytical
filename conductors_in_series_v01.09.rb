@@ -2,11 +2,11 @@
 puts "\n\n"
 puts "###############################################################################"
 puts "#                                                                             #"
-puts "# CONDUCTORS IN SERIES version 1.08                                           #"
+puts "# CONDUCTORS IN SERIES version 1.09                                           #"
 puts "#_____________________________________________________________________________#"
 puts "#                                                                             #"
 puts "# Copyright 2011-14 by Mark Ciotola; available for use under GNU license      #"
-puts "# Last revised on 16 April 2014                                               #" 
+puts "# Last revised on 17 May 2014                                                 #" 
 puts "# Website: http://www.heatsuite.com/                                          #"
 puts "# Source site: https://github.com/mciotola/conductors_in_series               #"
 puts "#_____________________________________________________________________________#"
@@ -53,15 +53,15 @@ puts " \n\n"
   material1 = 'copper' # choices: 'copper' 'iron' 'aluminum' 'brass'
   material2 = 'iron'   # choices: 'copper' 'iron' 'aluminum' 'brass'
   length = 0.0500      # in m; decimal point added to tell Ruby to allow floating point calculations
-  width = 0.0133       # in m
-  height = width       # in m
+  height = 0.0133       # in m
+  width = height       # in m
 
 # Display the parameters. 
 
 puts "================================== Parameters =================================\n\n"
 
   puts sprintf "  Conductor Length (in m): \t\t %7.3f " , length.to_s
-  puts sprintf "  Conductor Width (in m): \t\t %7.3f " , width.to_s
+  puts sprintf "  Conductor Height (in m): \t\t %7.3f " , height.to_s
   puts sprintf "  \n"  
   puts sprintf "  Conductor Material 1: \t\t %4s " , material1
   puts sprintf "  Conductor Material 2: \t\t %4s " , material2
@@ -94,17 +94,17 @@ puts "================================== Parameters ============================
   puts sprintf "  Thermal Conductivity of %s %s \t %5.1f", material1, "is", thermalconductivity1	
   puts sprintf "  Thermal Conductivity of %s %s \t %5.1f", material2, "is", thermalconductivity2	
   puts "\n" 
-  puts sprintf "  Note: Conductor Height = Conductor Width \n\n\n" 
+  puts sprintf "  Note: Conductor Width = Conductor Height \n\n\n" 
 
 # Run the simulation. 
 
   rho1 = 1.0/thermalconductivity1  # rho1 is the thermal resistance of conductor 1.  
   rho2 = 1.0/thermalconductivity2  # rho2 is the thermal resistance of conductor 2.
+
+  x  = length / ((rho1/rho2) + 1.0)   # height h cancels out)
   
-  x  = ( length * (rho2/rho1))/  ( (rho2/rho1) + 1)   # height h cancels out)
-  
-  theta1 = atan(x/width)
-  theta2 = atan((length - x)/width)
+  theta1 = atan(x/height)
+  theta2 = atan((length - x)/height)
   
 # Convert angles and display the output. 
 

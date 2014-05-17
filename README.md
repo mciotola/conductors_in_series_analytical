@@ -1,5 +1,5 @@
 
-CONDUCTORS IN SERIES v01.08 README
+CONDUCTORS IN SERIES v01.09 README
 ==================================
 
 Language
@@ -41,7 +41,7 @@ Running the Program
 Adjusting Parameters
 --------------------
 
-  You can choose the material of each thermal conductors,as well as the
+  You can choose the material of each thermal conductors, as well as the
   the length and width of the conductors.  To do so, change the
   parameters in the "# Initialize simulation parameters" section of the 
   source code. You will need a text editor for this.
